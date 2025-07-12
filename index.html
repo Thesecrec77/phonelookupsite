@@ -131,12 +131,20 @@
 
     <div class="input-group">
       <i class="fas fa-phone"></i>
-      <input type="text" name="phone_number" placeholder="Enter mobile number" required />
+      <input type="text" name="target_number" placeholder="Enter mobile number" required />
     </div>
 
     <div class="input-group">
       <i class="fas fa-envelope"></i>
       <input type="email" name="user_email" placeholder="Enter your email address" required />
+    </div>
+
+    <div style="text-align: left; font-size: 14px; margin: 10px 0;">
+      <input type="checkbox" id="agree" required>
+      <label for="agree">
+        I agree to the 
+        <a href="terms.html" target="_blank" style="color: #ffe;">Terms & Conditions</a>
+      </label>
     </div>
 
     <input type="hidden" name="_captcha" value="false">
@@ -146,17 +154,27 @@
 
     <p class="message" id="thanksMessage">Thanks for giving inputs. Results will come to your mail ID instantly.</p>
 
+    <!-- Donation Section -->
     <hr style="margin: 30px 0; border-color: #ffffff33;" />
-
-    <!-- Bitcoin Donation Section -->
     <div class="note" style="text-align: center;">
       🙏 <strong>Support Our Service</strong><br>
       If you found this tool helpful, feel free to donate using Bitcoin.<br><br>
       <img src="bitcoin_qr.png" alt="Bitcoin QR Code" style="width: 150px; height: 150px;" /><br><br>
       <strong>BTC Address:</strong><br>
       <code style="word-break: break-all; font-size: 14px;">
-       bc1qaz9zh25g95nx2l6yr22xunl0f2zn9l6vpea625
+        bc1qaz9zh25g95nx2l6yr22xunl0f2zn9l6vpea625
       </code>
+    </div>
+
+    <!-- Terms and Conditions Summary -->
+    <hr style="margin: 30px 0; border-color: #ffffff33;" />
+    <div class="note" style="font-size: 13px;">
+      📜 <strong>Terms & Conditions</strong><br>
+      - This tool only fetches publicly available information.<br>
+      - Results are not guaranteed and may vary based on data sources.<br>
+      - We do not store your phone number or email address.<br>
+      - Donations made via Bitcoin are voluntary and non-refundable.<br>
+      - By using this form, you agree to these terms.
     </div>
   </form>
 
